@@ -1,6 +1,18 @@
 # DNS Spoofer
 A Python-based DNS spoofing tool that intercepts DNS queries and redirects target domains to a specified IP address. This script uses netfilterqueue and scapy to process and modify network packets.
 
+## Known Issue
+Currently, when attempting to visit the spoofed website in a browser, the connection will refuse to load. This may be due to additional security protocols (such as DNS over HTTPS or SSL verification) used by modern browsers.
+
+However, the spoofing is confirmed to work when using the ping command. For example:
+
+```bash
+ping -c 1 [spoofed_website]
+```
+The output will show the redirected IP address being resolved by the DNS server.
+
+
+
 ## Features
 - Intercepts DNS queries.
 - Redirects traffic from a specified website to a chosen IP address.
